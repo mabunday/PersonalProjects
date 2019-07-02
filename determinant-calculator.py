@@ -97,12 +97,16 @@ def input_matrix() -> List[List[float]]:
         input_row = input(f"Row {row_num}: ")
         while True:  # Runs forever until broken out of
             # Check each entry is either an integer or a float
+            # parsed_row then becomes a list of boolean (True/False) values
             parsed_row = [__is_str_numeric(entry) for entry in input_row.split(",")]
             # Check dimensions match
             if len(parsed_row) != num_cols:
                 print(f"Expected {num_cols} entries. Got {len(parsed_row)}. Try again.")
                 input_row = input(f"Row {row_num}: ")
-            # If not all entries are integers or floats
+            # parsed_row is now a list of booleans. The all() function checks
+            # if an iterable is all True. In this case, it's really checking that
+            # all entries in input_row are all either an int or a float
+            # https://docs.python.org/3/library/functions.html#all
             elif not all(parsed_row):
                 print(f"Please only enter integers or floats. Try again.")
                 input_row = input(f"Row {row_num}: ")
