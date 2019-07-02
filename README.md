@@ -1,4 +1,0 @@
-# PersonalProjects
-
-practice
-hello world
