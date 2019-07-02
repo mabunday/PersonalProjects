@@ -10,6 +10,7 @@ dim_str = input("")
 dim_list = dim_str.split(" ")
 valid = False
 
+# I have no idea what I'm doing lines 14-29
 """
 while not valid:
     try:
