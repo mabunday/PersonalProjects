@@ -8,6 +8,16 @@ print("matrix m x n. input dimensions:")
 # dim_'x' = dimension in type 'x'
 dim_str = input("")
 dim_list = dim_str.split(" ")
+valid = False
+
+"""
+while not valid:
+    try:
+        dim_list[0]
+        valid = True
+    except IndexError:
+        print("Invalid input. Reenter dimensions.")
+        dim_str = input("")
 
 while dim_list[0] != dim_list[2]:
     print("Invalid matrix. Accept only matrices of n x n.")
@@ -15,6 +25,7 @@ while dim_list[0] != dim_list[2]:
     dim_list = dim_str.split(" ")
 else:
     pass
+"""
 
 dim = int(dim_list[0])
 
@@ -42,15 +53,14 @@ press enter after each row """)
                     print("M Format is not compatible. Reenter row.")
                     mat_row = input(f"row {row_number}: ")
                 else:
+                    # applies only after first input
+                    if row_number != 1:
+                        mat_vals += ','
+                    else:
+                        pass
                     row_number += 1
                     mat_vals += mat_row
                     compatible = True
-
-                # applies only after first input
-                if row_number != 1:
-                    mat_vals += ','
-                else:
-                    pass
 
             # checking for format fit
             except ValueError:
@@ -65,7 +75,9 @@ num_str = row_input()
 num_list = [float(num) for num in num_str.split(",")]
 num_mat = [num_list[i * dim:(i + 1) * dim] for i in range((dim ** 2 + dim - 1) // dim)]
 A = matrix_A = np.array(num_mat)
-print(A)
+print(f"""
+matrix:
+{A}""")
 
 
 # ROW REDUCING (rrf) TO A DIAGONAL MATRIX
