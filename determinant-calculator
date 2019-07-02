@@ -8,14 +8,6 @@ print("matrix m x n. input dimensions:")
 # dim_'x' = dimension in type 'x'
 dim_str = input("")
 dim_list = dim_str.split(" ")
-valid = False
-while not valid:
-    try:
-        dim_list[0]
-        valid = True
-    except IndexError:
-        print("Invalid input. Reenter dimensions.")
-        dim_str = input("")
 
 while dim_list[0] != dim_list[2]:
     print("Invalid matrix. Accept only matrices of n x n.")
