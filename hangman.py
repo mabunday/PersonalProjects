@@ -1,3 +1,18 @@
+# I made a hangman that uses Turtle to draw the picture. I originally tried to 
+# make all of my Turtle-related functions in a separate file and import it into this
+# file, but it told me that 'the module is unrecognizable', and the answers online didn't 
+# make sense to me.
+
+# When you lose, I want it to show you the answer. However, the word gets edited later on
+# so that the program will check for all repeat letters. In line 121 I tried to have
+# 'a nonmodified word' be the same as the word and print it again at the end on line 183
+
+# The last thing I want to change is the long list of code starting on line 160
+# for the different things to draw
+# each time a life is lost. Is there a way to write it so that I don't have to manually write
+# a separate action for each life?
+
+
 import random
 import turtle
 
